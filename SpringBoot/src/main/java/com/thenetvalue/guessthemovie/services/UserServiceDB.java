@@ -28,7 +28,10 @@ public class UserServiceDB implements UserService {
             return null;
         }
     }
+
+    //metodo per aggiungere un nuovo utente
     public void addUser(User user) {
+        //controllo se esiste l'username è gia esistente
         if(userRepository.findByUsername(user.getUsername()) == null) {
             userRepository.save(user);
         } else {
@@ -52,12 +55,13 @@ public class UserServiceDB implements UserService {
         userRepository.deleteById(id);
     }
 
-    //aggiunto controllo username e password
+    //autenticazione controllo se l'username coincide con la password dell'utente
     public User authenticateUser(String username, String password){
         User user = userRepository.findByUsername(username);
         if(user != null && user.getPassword().equals(password)){
             return user;
         }else{
+            //exception mostra un messaggio di errore in console
             throw new PasswordException("Password Errata");
         }
     }

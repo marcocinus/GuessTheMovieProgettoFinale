@@ -34,6 +34,7 @@ public class UsersController {
         userServiceDB.deleteUser(id);
     }
 
+    //chiamata POST per autenticare l'utente alla pagina di login
     @PostMapping("/login")
     public User login(@RequestBody User user) {
         return userServiceDB.authenticateUser(user.getUsername(), user.getPassword());
