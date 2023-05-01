@@ -52,6 +52,7 @@ public class UserServiceDB implements UserService {
         userRepository.deleteById(id);
     }
 
+    //aggiunto controllo username e password
     public User authenticateUser(String username, String password){
         User user = userRepository.findByUsername(username);
         if(user != null && user.getPassword().equals(password)){
