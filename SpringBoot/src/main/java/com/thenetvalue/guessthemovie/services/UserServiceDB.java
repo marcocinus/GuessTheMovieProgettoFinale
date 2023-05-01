@@ -17,6 +17,10 @@ public class UserServiceDB implements UserService {
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     * Metodo che restituisce tutti gli user all'interno del database
+     * @return
+     */
     public List<User> getAllUsers(){
         return userRepository.findAll();
     }
