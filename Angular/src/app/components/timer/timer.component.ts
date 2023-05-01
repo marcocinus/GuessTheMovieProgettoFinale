@@ -66,7 +66,6 @@ stopTimer() {
   const totalTime = this.elapsedTime + this.cardElapsedTime;
   // Emette l'evento "totalTimeEvent" con il tempo totale trascorso.
   this.totalTimeEvent.emit(totalTime);
-  console.log(totalTime);
 }
 
 onTimerStopped(event: boolean) {

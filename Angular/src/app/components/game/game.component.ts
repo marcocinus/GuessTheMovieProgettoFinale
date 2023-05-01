@@ -66,7 +66,6 @@ export class GameComponent {
     if (this.correctTitle) {
       this.gameCompleted = true;
       this.timerComponent.stopTimer(); // Ferma il timer.
-      console.log(this.totalTime); // Stampa il tempo trascorso.
     }
   }
   
