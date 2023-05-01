@@ -12,8 +12,7 @@ Una volta indovinato l’utente potrà scegliere se salvarlo nella lista dei pre
 
 Scaricare la release e crearsi due database, si consiglia di utilizzare MySql Workbench. 
 
-`CREATE DATABASE movies;`
-`CREATE DATABASE users;`
+`CREATE DATABASE guessthemovie;`
 
 Dopo aver creato i database aprire la cartella dell'intero progetto su **Visual Studio Code** e seguire le prossime istruzioni:
 
