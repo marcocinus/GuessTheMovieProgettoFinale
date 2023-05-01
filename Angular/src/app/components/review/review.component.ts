@@ -47,6 +47,12 @@ submitReview(){
   createdAt: this.movie.createdAt ?? '',
   updatedAt: this.movie.updatedAt ?? '',
 };
+
+if (this.recensione.invalid) {
+  this.showError = true;
+  return;
+}
+
 this.playService.saveMovieToDB(review).subscribe(
   (savedMovie: Movie) => {
     console.log('Recensione salvata:', savedMovie);
@@ -70,6 +76,14 @@ this.recensioneAggiunta = true;
       return 'La recensione deve contenere al massimo 160 caratteri';
     }
     return '';
+  }
+
+  submitForm() {
+    if (this.recensione.invalid) {
+      this.showError = true;
+    } else {
+      // Implementare la logica di invio recensione
+    }
   }
 
   giocaAncora() {
