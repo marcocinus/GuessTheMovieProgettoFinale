@@ -14,39 +14,40 @@ export class PlayService {
   
   private authService: AuthService;
 
- //istanza HttpClient e AuthService per salvare l'id dell'utente
- constructor(private httpClient: HttpClient, authService: AuthService) {
-  this.authService = authService;
- }
+  // Istanza HttpClient e AuthService per salvare l'ID dell'utente.
+  constructor(private httpClient: HttpClient, authService: AuthService) {
+    this.authService = authService;
+  }
 
   API_ROOT = 'http://localhost:1234/api';
 
-  //chaimata get che recupera dal be i dati di un film 
+  // Chiamata GET che recupera dal backend i dati di un film.
   getRandomMovie() {
     return this.httpClient.get<Movie>(`${this.API_ROOT}/randomMovie`);
   }
 
-  //metodo che consente di recuperare e salvare userId dell'utente loggato
+  // Metodo che consente di recuperare e salvare l'ID dell'utente loggato.
   public getUserId(): string {
     const currentUser: User = this.authService.getCurrentUser();
     const userId = currentUser?.id;
     return userId;
   }
 
-  //chiamata post che invia i dati recuperati dalla GET al BE per salvarli nel databse 
-  //aggiungendo userId, voto e recensione inseriti dall'utente 
+  // Chiamata POST che invia i dati recuperati dalla GET al backend per salvarli nel database
+  // aggiungendo l'ID dell'utente, il voto e la recensione inseriti dall'utente.
   saveMovieToDB(movie: Movie): Observable<Movie> {
     const userId = this.getUserId();
     return this.httpClient.post<Movie>(`${this.API_ROOT}/saveMovie`, movie);
   }
 
+  // Chiamata GET che recupera i film dell'utente dal backend.
   getUserMovie(userId: string): Observable<Movie[]> {
-    const url = (`${this.API_ROOT}/${userId}/movies`); // includi l'userId nell'URL della richiesta
-      return this.httpClient.get<Movie[]>(url);
+    // includi l'ID dell'utente nell'URL della richiesta
+    return this.httpClient.get<Movie[]>(`${this.API_ROOT}/${userId}/movies`);
   }
 
+  // Chiamata DELETE che elimina un film dal database dell'utente.
   deleteUserMovie(movieId: string): Observable<void> {
     return this.httpClient.delete<void>(`${this.API_ROOT}/movies/${movieId}`);
   }
-
 }

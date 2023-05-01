@@ -12,16 +12,19 @@ export class AddReviewComponent {
 
   constructor() { this.movie = {}; }
 
+  //importo le proprieta
   @Input() movie: Partial<Movie>;
   @Input() elapsedTime: number = 0;
   @Input() totalTime: number = 0;
 
   reviewVisibile = false;
 
+  //funzione che rende visibile la parte per inserire la recensione all'utente
   mostraReview() {
     this.reviewVisibile = true;
   }
 
+  //ricarica la pagina di gioco
   giocaAncora() {
     location.reload();
   }

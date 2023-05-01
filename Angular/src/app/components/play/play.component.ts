@@ -11,20 +11,25 @@ import { Movie } from 'src/app/models/movie';
 export class PlayComponent  implements OnInit {
 
 
-  @Input() movieId: any;
-  movie: Partial<Movie> = {};
+  // Input che accetta l'ID del film da caricare.
+@Input() movieId: any;
 
-  constructor(private playService: PlayService) {}
+// Proprietà utilizzata per memorizzare le informazioni sul film.
+movie: Partial<Movie> = {};
 
-  ngOnInit() {
-    this.playService.getRandomMovie().subscribe(
-      (movie: Movie) => {
-        this.movie = movie;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
+constructor(private playService: PlayService) {}
+
+ngOnInit() {
+  // Richiesta al servizio PlayService un film casuale.
+  this.playService.getRandomMovie().subscribe(
+    (movie: Movie) => {
+      // Quando la richiesta ha successo, memorizza le informazioni del film nella proprietà "movie".
+      this.movie = movie;
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+}
   
 }
