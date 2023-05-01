@@ -1,0 +1,21 @@
+.polaroid-card {
+  margin: 20px;
+  position: relative;
+  padding: 20px;
+  background-color: var(--secondary-50);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  transform: rotate(-2deg);
+}
+
+
+.polaroid-card img {
+  display: inline;
+  height: 300px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.polaroid-card h1 {
+  text-transform: uppercase;
+}

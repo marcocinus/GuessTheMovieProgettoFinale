@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+    <div class="polaroid-container col-md-6 col-12">
+      <tnv-polaroid-card [movie]="movie"></tnv-polaroid-card>
+    </div>
+
+
+    <div class="review-container col-md-6 col-12" *ngIf="!reviewVisibile">
+      <img src="/assets/images/GuessTheMovie_success.gif" alt="Success">
+      <h2>Hai indovinato in {{ (totalTime) / 1000 }} secondi</h2> <!-- Utilizza la variabile totalTime -->
+        <button mat-fab extended class="aggiungi-preferiti" (click)="mostraReview()">
+          <mat-icon>favorite</mat-icon>
+          Aggiungi film ai preferiti
+        </button>
+      
+        <button mat-fab extended class="gioca-ancora" (click)="giocaAncora()">
+          <mat-icon>movie</mat-icon>
+          Gioca ancora
+        </button>
+      </div>
+
+      <div class="review-container col-md-6 col-12" *ngIf="reviewVisibile">
+        <tnv-review [movie]="movie" [elapsedTime]="elapsedTime" [totalTime]="totalTime"></tnv-review>
+        </div>
+    </div>
+</div>
+
+
+

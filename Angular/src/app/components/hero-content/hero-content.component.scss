@@ -1,0 +1,21 @@
+header {
+    width: 100%;
+    height: 450px;
+    background-image: url('../../../assets/images/GuessTheMovie.jpg');
+    background-size:cover; 
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 3px 5px lightgray;
+}
+
+header h1 {
+    color: white;
+    font-size: 100px;
+    margin: 0;
+    text-shadow: 2px 2px 4px black;
+    text-align: center;
+}
+
+

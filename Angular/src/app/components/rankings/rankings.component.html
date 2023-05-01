@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Film preferiti</h1>
+  <div class="image">
+    <img src="/assets/images/GuessTheMovie_favourite.png" alt="favorite">
+  </div>
+</div>
+
+
+<div *ngIf="favoriteMovies.length === 0">
+  <p>Nessun film preferito trovato.</p>
+</div>
+
+
+<div *ngIf="favoriteMovies.length > 0">
+<table> 
+  <thead> 
+    <tr> 
+      <th>Poster</th> 
+      <th>Titolo</th> 
+      <th>Recensione</th> 
+      <th>Voto</th> 
+      <th>Indovinato in:</th> 
+      <th>Elimina</th> 
+    </tr> 
+  </thead> 
+  <tbody> 
+    <tr *ngFor="let movie of favoriteMovies"> 
+      <td class="text-center"><img class="movie-poster" [src]="movie.moviePoster" alt="Poster del film"></td> 
+      <td>{{ movie.movieTitle }}</td> 
+      <td class="review">{{ movie.comment }}</td> 
+      <td class="rating"> <ngb-rating [rate]="movie.rating" [max]="5"></ngb-rating> </td> 
+      <td> {{ movie.time / 1000 }} secondi</td> 
+      <td class="text-center">
+        <mat-icon (click)="deleteMovie(movie)">delete</mat-icon></td> 
+    </tr> 
+  </tbody> 
+</table>
+
+</div>

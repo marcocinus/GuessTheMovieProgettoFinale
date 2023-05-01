@@ -1,0 +1,87 @@
+<h1>Vuoi chiedere un indizio?</h1>
+<div class="separator"></div>
+
+<section class="regista-genere-data">
+  <div class="row justify-content-center">
+
+    <div class="justify-content-center col-12 col-sm-6 col-md-4 py-2">
+      <div class="card-body" *ngIf="showDirector" (click)="onClick();
+      showDirector = !showDirector">
+        <h5>Regista</h5>
+      </div>
+      <div class="card-body-clicked" *ngIf="!showDirector">
+        <span>
+          <p>Regista:</p>
+          <div class="separator"></div>
+          <h5>{{ movie.director }}</h5>
+        </span>
+      </div>
+    </div>
+
+    <div class="justify-content-center col-12 col-sm-6 col-md-4 py-2">
+      <div class="card-body" *ngIf="showGenre" (click)="onClick();
+      showGenre = !showGenre">
+        <h5>Genere</h5>
+      </div>
+      <div class="card-body-clicked" *ngIf="!showGenre">
+        <span>
+          <p>Genere:</p>
+          <div class="separator"></div>
+          <h5>{{ movie.genre }}</h5>
+        </span>
+      </div>
+    </div>
+
+    <div class="justify-content-center col-12 col-sm-6 col-md-4 py-2">
+      <div class="card-body" *ngIf="showData" (click)="onClick();
+      showData = !showData">
+        <h5>Data di uscita</h5>
+      </div>
+      <div class="card-body-clicked" *ngIf="!showData">
+        <span>
+          <p>Data di uscita:</p>
+          <div class="separator"></div>
+          <h5>{{ showData ? 'Data di uscita' : movie.releaseDate | date:'dd/MM/yyyy' }}</h5>
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+
+<section class="attori-trama">
+
+
+  <div class="justify-content-center py-2">
+    <div class="card-body" *ngIf="showActors" (click)="onClick();
+      showActors = !showActors">
+      <h5>Attori principali</h5>
+    </div>
+    <div class="card-body-clicked" *ngIf="!showActors">
+      <span>
+        <h6>Attori principali:</h6>
+        <div class="separator"></div>
+        <h5>{{ movie.actors }}</h5>
+      </span>
+    </div>
+  </div>
+
+
+  <div class="justify-content-center py-2">
+    <div class="card-body" *ngIf="showOverview" (click)="onClick();
+      showOverview = !showOverview">
+      <h5>Trama</h5>
+    </div>
+    <div class="card-body-clicked" *ngIf="!showOverview">
+      <span>
+        <h6>Trama:</h6>
+        <div class="separator"></div>
+        <p class="overview">{{ movie.overview }}</p>
+      </span>
+    </div>
+  </div>
+
+
+</section>

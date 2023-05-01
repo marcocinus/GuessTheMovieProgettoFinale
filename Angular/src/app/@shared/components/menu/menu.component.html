@@ -1,0 +1,15 @@
+<button mat-button [matMenuTriggerFor]="menu">Ciao <strong>{{ currentUser.name }}!</strong></button>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/profile" routerLinkActive="active">
+      <mat-icon>account_circle</mat-icon>
+      <span>Profilo</span>
+    </button>
+    <button mat-menu-item routerLink="/rankings" routerLinkActive="active">
+      <mat-icon>favorite</mat-icon>
+      <span>Preferiti</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Esci</span>
+    </button>
+  </mat-menu>

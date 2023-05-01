@@ -1,0 +1,29 @@
+<div class="row justify-content-center">
+<h2>Profilo Utente</h2>
+
+<mat-card class="profile-card col-6">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>{{ currentUser.username }}</mat-card-title>
+      <mat-card-subtitle>
+        <span>Nome</span>: <span class="profile-data">{{ currentUser.name }}</span>
+        <br />
+          <span>Cognome</span>:
+          <span class="profile-data">{{ currentUser.surname }}</span>
+          <br />
+
+          <span>Email</span>:
+          <span class="profile-data">{{ currentUser.email }}</span>
+          <br />
+
+
+      </mat-card-subtitle>
+      <img mat-card-lg-image src="/assets/images/GuessTheMovie_account.png" >
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    <tnv-logout class="mt-3"></tnv-logout>
+  </mat-card-content>
+</mat-card>
+
+</div>

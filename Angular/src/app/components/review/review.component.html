@@ -1,0 +1,37 @@
+<div *ngIf="!recensioneAggiunta">
+<div class="row col-md-6 col-12">
+    <h4>Vota il film:</h4>
+    <div class="col-12"> 
+    <ngb-rating [(rate)]="rate" [max]="5"></ngb-rating> 
+</div> 
+</div>
+
+
+<div class="form-recensione">
+    <label for="recensione">Inserisci una recensione</label>
+    <textarea class="recensione" id="recensione" [formControl]="recensione"></textarea>
+    <mat-error *ngIf="showError">{{ getErrorMessage() }}</mat-error>
+  </div>
+
+
+<button mat-fab extended class="primary" (click)="submitReview()">
+    <mat-icon>star</mat-icon>
+    Invia recensione
+</button>
+</div>
+
+<h1>{{risultato}}</h1>
+
+<div *ngIf="recensioneAggiunta">
+<button mat-fab extended class="gioca-ancora" (click)="giocaAncora()">
+  <mat-icon>movie</mat-icon>
+  Gioca ancora
+</button>
+
+<button mat-fab extended class="preferiti" routerLink="/rankings" routerLinkActive="active">
+  <mat-icon>favorite</mat-icon>
+  Film preferiti
+</button>
+</div>
+
+ 

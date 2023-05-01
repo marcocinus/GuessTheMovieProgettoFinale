@@ -1,0 +1,20 @@
+<!-- insert-title.component.html -->
+
+<div class="insert-title">
+ 
+  <form (submit)="confermaTitolo()">
+    <div class="row">
+    <mat-form-field>
+      <input matInput placeholder="Inserisci il titolo del film" [(ngModel)]="titoloInserito" name="titolo">
+    </mat-form-field> 
+  </div>
+
+
+    <button mat-fab extended type="submit">
+      <mat-icon>send</mat-icon>
+      Conferma</button>
+   
+  </form>
+  <p>{{risultato}}</p>
+</div>
+

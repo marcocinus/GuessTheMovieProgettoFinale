@@ -1,0 +1,9 @@
+<div class="polaroid-card">
+ 
+    <img [src]="movie.moviePoster" alt="poster" />
+
+    <h1>{{movie.movieTitle}}</h1>
+    <h4><strong>Diretto da: </strong> {{movie.director}}</h4>
+    <h5><strong>Data di uscita: </strong>{{movie.releaseDate  | date:'dd/MM/yyyy' }}</h5>
+    <p><strong>Attori:</strong> {{movie.actors}}</p>
+</div>

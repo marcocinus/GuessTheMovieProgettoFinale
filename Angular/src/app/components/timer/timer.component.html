@@ -1,0 +1,26 @@
+
+<div class="timer justify-content-center col-12 py-2">
+  <h3 *ngIf="isRunning || isStopped || gameCompleted">Sono trascorsi {{(this.elapsedTime + this.cardElapsedTime)/ 1000 }} secondi</h3>
+
+<div>
+
+  <div class="image col-md-4" *ngIf="!isRunning">
+    <img src="/assets/images/GuessTheMovie_rules.png" alt="rules">
+</div>
+
+
+<button mat-fab extended (click)="startTimer()" *ngIf="!isRunning">
+  <mat-icon>play_arrow</mat-icon>
+  Inizia il gioco
+</button>
+</div>
+
+<button mat-fab extended (click)="giocaAncora()" [disabled]="!isRunning" *ngIf="isRunning">
+  <mat-icon>stop</mat-icon>
+  Mi arrendo, proviamo con un altro film! 
+</button>
+</div>
+
+
+
+

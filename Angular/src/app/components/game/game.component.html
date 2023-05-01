@@ -1,0 +1,33 @@
+<div class="card" *ngIf="!correctTitle">
+  <div class="row">
+
+    <div class="col-12 col-sm-4 py-2">
+
+      <div class="contatore">
+
+        <div class="blurred-poster" *ngIf="gameStarts">
+            <img class="poster" [src]="movie.moviePoster" alt="poster" />
+        </div>
+
+        <tnv-insert-title *ngIf="gameStarts" [movie]="movie"
+          (titoloCorretto)="onTitoloCorretto($event)"></tnv-insert-title>
+        <tnv-timer [movie]="movie" [elapsedTime]="elapsedTime" [cardElapsedTime]="cardElapsedTime"
+          [gameCompleted]="gameCompleted" (click)="showCards()" (stopTimerEvent)="onTimerStopped($event)"
+          (totalTimeEvent)="onTotalTime($event)"></tnv-timer>
+      </div>
+    </div>
+
+
+    <div class="col-12 col-sm-8 py-2">
+      <tnv-rules *ngIf="!gameStarts"></tnv-rules>
+      <tnv-card [movie]="movie" *ngIf="gameStarts" (addThirtySeconds)="addThirtySeconds($event)"></tnv-card>
+
+    </div>
+
+
+  </div>
+</div>
+
+<div *ngIf="correctTitle">
+  <tnv-add-review [movie]="movie" [elapsedTime]="elapsedTime" [totalTime]="totalTime"></tnv-add-review>
+</div>

@@ -1,0 +1,25 @@
+.container {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .polaroid-container {
+    margin-left: 20px;
+  }
+  
+  .review-container {
+    margin-right: 20px;
+    flex: 1;
+  }
+
+
+.gioca-ancora{
+    background-color: var(--primary-400);
+    margin: 10px;
+    }
+
+
+img{
+  align-items: center;
+}  
