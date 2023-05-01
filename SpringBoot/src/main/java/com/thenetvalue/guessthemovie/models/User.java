@@ -1,3 +1,7 @@
+//Questa è la classe User che rappresenta un utente della nostra web application.
+// Al suo interno troviamo gli attributi che costiuiscono l'oggetto, i suoi getter e setter e il costruttore.
+//Con @Entity e @Table indichiamo che la classe rappresenta una tabella all'interno di un db.
+
 package com.thenetvalue.guessthemovie.models;
 
 import jakarta.persistence.Entity;

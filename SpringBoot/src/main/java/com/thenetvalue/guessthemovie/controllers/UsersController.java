@@ -1,3 +1,9 @@
+/*Questo codice definisce un controller REST per la gestione degli utenti in un'applicazione web.
+Il controller gestisce le richieste HTTP per ottenere, aggiungere, aggiornare e cancellare utenti,
+nonché per autenticare gli utenti tramite una richiesta POST al percorso "/login".
+Le operazioni di gestione degli utenti sono implementate attraverso un'istanza del servizio UserServiceDB,
+che è annotata con @Autowired per la gestione delle dipendenze.*/
+
 package com.thenetvalue.guessthemovie.controllers;
 
 import com.thenetvalue.guessthemovie.models.User;
