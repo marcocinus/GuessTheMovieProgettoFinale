@@ -2,8 +2,8 @@ import { Sequelize } from "sequelize";
 
 const db = new Sequelize({
   database: "guessthemovie",
-  username: "root",
-  password: "pigna1839",
+  username: "username", //inserire il proprio username
+  password: "password", //inserire la propria password
   host: "localhost",
   port: 3306,
   dialect: "mysql",

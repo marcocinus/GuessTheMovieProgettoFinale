@@ -28,7 +28,7 @@
       <td class="text-center"><img class="movie-poster" [src]="movie.moviePoster" alt="Poster del film"></td> 
       <td>{{ movie.movieTitle }}</td> 
       <td class="review">{{ movie.comment }}</td> 
-      <td class="rating"> <ngb-rating [rate]="movie.rating" [max]="5"></ngb-rating> </td> 
+      <td class="rating"> <ngb-rating [rate]="movie.rating" [max]="5" [readonly]="true"></ngb-rating> </td>
       <td> {{ movie.time / 1000 }} secondi</td> 
       <td class="text-center">
         <mat-icon (click)="deleteMovie(movie)">delete</mat-icon></td> 
