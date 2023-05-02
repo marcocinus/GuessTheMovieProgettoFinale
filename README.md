@@ -10,7 +10,7 @@ Una volta indovinato l’utente potrà scegliere se salvarlo nella lista dei pre
 
 ## Cosa serve
 
-Scaricare la release e crearsi due database, si consiglia di utilizzare MySql Workbench. 
+Scaricare la release e creare un database, si consiglia di utilizzare MySql Workbench. 
 
 `CREATE DATABASE guessthemovie;`
 
