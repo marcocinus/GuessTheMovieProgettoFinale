@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { response } from 'express';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/@core/services/auth.service';
 import { Movie } from 'src/app/models/movie';
@@ -11,6 +12,8 @@ import { User } from 'src/app/models/user';
   providedIn: 'any'
 })
 export class PlayService {
+
+  movie: Movie [] = [];
   
   private authService: AuthService;
 
@@ -41,13 +44,15 @@ export class PlayService {
   }
 
   // Chiamata GET che recupera i film dell'utente dal backend.
-  getUserMovie(userId: string): Observable<Movie[]> {
+  getUserMovie(userId: string){
     // includi l'ID dell'utente nell'URL della richiesta
-    return this.httpClient.get<Movie[]>(`${this.API_ROOT}/${userId}/movies`);
-  }
+    return this.httpClient.get<Movie[]>(`${this.API_ROOT}/${userId}/movies`)
+    }
 
   // Chiamata DELETE che elimina un film dal database dell'utente.
-  deleteUserMovie(movieId: string): Observable<void> {
-    return this.httpClient.delete<void>(`${this.API_ROOT}/movies/${movieId}`);
+  deleteUserMovie(movieId: string) {
+   this.httpClient.delete(`${this.API_ROOT}/movies/${movieId}`).subscribe({
+    next: () => this.movie = this.movie.filter( x => x.movieId !== movieId)
+   });
   }
 }

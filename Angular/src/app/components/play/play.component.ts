@@ -21,15 +21,7 @@ constructor(private playService: PlayService) {}
 
 ngOnInit() {
   // Richiesta al servizio PlayService un film casuale.
-  this.playService.getRandomMovie().subscribe(
-    (movie: Movie) => {
-      // Quando la richiesta ha successo, memorizza le informazioni del film nella proprietà "movie".
-      this.movie = movie;
-    },
-    (error) => {
-      console.log(error);
-    }
+  this.playService.getRandomMovie().subscribe({ next: (movie: Movie) => console.log(this.movie = movie)}
   );
-}
-  
+ }
 }

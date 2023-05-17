@@ -4,10 +4,7 @@
 
 package com.thenetvalue.guessthemovie.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 
 @Entity
@@ -15,7 +12,7 @@ import jakarta.persistence.Table;
 public class User {
     //Attributi
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String surname;

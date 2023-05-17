@@ -31,7 +31,7 @@
       <td class="rating"> <ngb-rating [rate]="movie.rating" [max]="5" [readonly]="true"></ngb-rating> </td>
       <td> {{ movie.time / 1000 }} secondi</td> 
       <td class="text-center">
-        <mat-icon (click)="deleteMovie(movie)">delete</mat-icon></td> 
+        <mat-icon (click)="deleteMovie(movie.movieId)">delete</mat-icon></td> 
     </tr> 
   </tbody> 
 </table>

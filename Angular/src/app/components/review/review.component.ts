@@ -53,17 +53,13 @@ if (this.recensione.invalid) {
   return;
 }
 
-this.playService.saveMovieToDB(review).subscribe(
-  (savedMovie: Movie) => {
-    console.log('Recensione salvata:', savedMovie);
-    this.risultato = "La tua recensione è stata salvata!";
-  },
-  (error) => {
+this.playService.saveMovieToDB(review).subscribe({next: (response) => this.movie = response});
+
+  (error: any) => {
     console.error('Errore durante il salvataggio della recensione:', error);
     this.risultato = "Errore durante il salvataggio della recensione, riprova.";
     this.showError = true;
   }
-);
 this.recensioneAggiunta = true;
 }
 
@@ -89,6 +85,4 @@ this.recensioneAggiunta = true;
   giocaAncora() {
     location.reload();
   }
-
-
 }
